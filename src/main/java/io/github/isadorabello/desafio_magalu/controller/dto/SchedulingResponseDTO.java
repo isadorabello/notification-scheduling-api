@@ -5,7 +5,7 @@ import io.github.isadorabello.desafio_magalu.infrastructure.enums.StatusNotifica
 
 import java.time.LocalDateTime;
 
-public record SquedulingResponseDTO(Long id,
+public record SchedulingResponseDTO(Long id,
                                     String emailDestinatario,
                                     String telefoneDestinatario,
                                     String mensagem,
