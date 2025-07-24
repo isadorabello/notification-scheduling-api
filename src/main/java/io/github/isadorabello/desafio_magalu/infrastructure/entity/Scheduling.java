@@ -28,4 +28,11 @@ public class Scheduling {
     private String mensagem;
     private StatusNotificacaoEnum status;
 
+
+    @PrePersist
+    private void prePersist(){
+        dataHoraAgendamento = LocalDateTime.now();
+        status = StatusNotificacaoEnum.AGENDADO;
+    }
+
 }
