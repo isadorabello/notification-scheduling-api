@@ -3,6 +3,7 @@ package io.github.isadorabello.desafio_magalu.business;
 import io.github.isadorabello.desafio_magalu.business.mapper.InterfaceSchedulingMapper;
 import io.github.isadorabello.desafio_magalu.controller.dto.SchedulingRequestDTO;
 import io.github.isadorabello.desafio_magalu.controller.dto.SchedulingResponseDTO;
+import io.github.isadorabello.desafio_magalu.infrastructure.entity.Scheduling;
 import io.github.isadorabello.desafio_magalu.infrastructure.exception.NotFoundException;
 import io.github.isadorabello.desafio_magalu.infrastructure.repository.SchedulingRepository;
 import lombok.RequiredArgsConstructor;
@@ -21,6 +22,11 @@ public class SchedulingService {
 
     public SchedulingResponseDTO buscarAgendamento (Long id){
         return mapper.toResponseDTO(repository.findById(id).orElseThrow(() -> new NotFoundException("Usuário com o ID informado não foi encontrado")));
+    }
+
+    public void cancelarAgendamento(Long id){
+        Scheduling scheduling = repository.findById(id).orElseThrow(() -> new NotFoundException("Usuário com o ID informado não foi encontrado"));
+        repository.save(mapper.toCancelEntity(scheduling));
     }
 
 }

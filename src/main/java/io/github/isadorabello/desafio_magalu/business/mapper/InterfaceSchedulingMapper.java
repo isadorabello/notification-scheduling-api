@@ -4,6 +4,7 @@ import io.github.isadorabello.desafio_magalu.controller.dto.SchedulingRequestDTO
 import io.github.isadorabello.desafio_magalu.controller.dto.SchedulingResponseDTO;
 import io.github.isadorabello.desafio_magalu.infrastructure.entity.Scheduling;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 
 import static org.mapstruct.MappingConstants.ComponentModel.SPRING;
 
@@ -14,5 +15,9 @@ public interface InterfaceSchedulingMapper {
     Scheduling toEntity (SchedulingRequestDTO dto);
 
     SchedulingResponseDTO toResponseDTO(Scheduling scheduling);
+
+    @Mapping(target = "dataHoraModificacao", expression = "java(LocalDateTime.now())")
+    @Mapping(target = "", expression = "java(StatusNotificacaoEnum.CANCELADO)")
+    Scheduling toCancelEntity (Scheduling scheduling);
 
 }
