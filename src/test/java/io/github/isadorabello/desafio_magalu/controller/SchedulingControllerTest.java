@@ -68,7 +68,7 @@ public class SchedulingControllerTest {
                 .andExpect(jsonPath("$.emailDestinatario").value(response.emailDestinatario()))
                 .andExpect(jsonPath("$.telefoneDestinatario").value(response.telefoneDestinatario()))
                 .andExpect(jsonPath("$.mensagem").value(response.mensagem()))
-                .andExpect(jsonPath("$.dataHoraEnvio").value("02-01-2025 11-01-01"))
+                .andExpect(jsonPath("$.dataHoraEnvio").value("02-01-2025 11:01:01"))
                 .andExpect(jsonPath("$.status").value("AGENDADO"));
 
 

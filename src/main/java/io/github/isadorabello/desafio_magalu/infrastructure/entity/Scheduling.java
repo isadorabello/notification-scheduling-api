@@ -22,7 +22,7 @@ public class Scheduling {
     private Long id;
     private String emailDestinatario;
     private String telefoneDestinatario;
-    private LocalDateTime dataHotaEnvio;
+    private LocalDateTime dataHoraEnvio;
     private LocalDateTime dataHoraAgendamento;
     private LocalDateTime dataHoraModificacao;
     private String mensagem;

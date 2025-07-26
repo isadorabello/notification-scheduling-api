@@ -1,7 +1,6 @@
 package io.github.isadorabello.desafio_magalu.business;
 
 
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import io.github.isadorabello.desafio_magalu.business.mapper.InterfaceSchedulingMapper;
 import io.github.isadorabello.desafio_magalu.controller.dto.SchedulingRequestDTO;
 import io.github.isadorabello.desafio_magalu.controller.dto.SchedulingResponseDTO;
@@ -14,7 +13,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import java.time.LocalDateTime;
 
@@ -43,7 +41,7 @@ public class SchedulingServiceTest {
         // Crie uma entidade de exemplo. Caso utilize record ou classe, adapte conforme necessário.
         scheduling = Scheduling.builder()
                 .id(1L)
-                .dataHotaEnvio( LocalDateTime.of(2025, 1, 2, 11, 1, 1))
+                .dataHoraEnvio( LocalDateTime.of(2025, 1, 2, 11, 1, 1))
                 .emailDestinatario("email@email.com")
                 .telefoneDestinatario("55887996578")
                 .mensagem("Favor retornar a loja com urgência")
