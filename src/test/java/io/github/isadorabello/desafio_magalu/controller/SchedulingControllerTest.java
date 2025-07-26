@@ -28,7 +28,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @ExtendWith(MockitoExtension.class)
 public class SchedulingControllerTest {
 
-    @InjectMocks
+    @InjectMocks // classe que ta sendo mockada/testada
     SchedulingController controller;
 
     @Mock
